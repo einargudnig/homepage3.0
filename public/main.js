@@ -1,6 +1,11 @@
 const path = require("path");
 const fs = require("fs");
 
+// This file is the reason I can use simple markdown files as a blogposts.
+// This file needs to run every time I add/remove or update blog post.
+// to run this: npm run server
+
+
 // get a path to the content folder
 const dirPath = path.join(__dirname, "../src/content")
 let postList = [];
