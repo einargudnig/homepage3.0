@@ -400,7 +400,7 @@ const Featured = () => {
                                     {cover && (
                                     <div className="wrapper">
                                       <a href={external ? external : github ? github : '#'}>
-                                        <img src={cover} alt={title} className="img" width="580" height="250" /> 
+                                        <img src={cover} alt={title} className="img" maxwidth="580" height="250" /> 
                                       </a>
                                     </div>
                                     )}

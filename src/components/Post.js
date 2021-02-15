@@ -1,7 +1,8 @@
 import { Helmet  } from 'react-helmet';
 import styled from 'styled-components'
 import { Link, Redirect } from 'react-router-dom'
-import Markdown from 'react-markdown'
+import Markdown from 'react-markdown/with-html'
+import gfm from 'remark-gfm'
 
 import postList from '../posts.json'
 
@@ -28,7 +29,11 @@ const StyledPostContent = styled.div`
   p {
     margin: 1em 0;
     line-height: 1.5;
-    color: var(--light-slate);
+    color: ${({ theme }) => theme.textMain};
+  }
+
+  a {
+    text-decoration: underline;
   }
 `;
 
@@ -74,7 +79,7 @@ const Post = (props) => {
             </StyledPostHeader>
             
             <StyledPostContent>
-              <Markdown source={fetchedPost.content} escapeHtml={false}/>
+              <Markdown plugins ={{gfm}} source={fetchedPost.content} escapeHtml={false}/>
             </StyledPostContent>
 
         </StyledPostContainer>
