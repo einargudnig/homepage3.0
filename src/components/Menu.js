@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router,  
+} from 'react-router-dom';
 import styled from 'styled-components';
 import { navLinks } from '../static/navLinks';
 import { KEY_CODES } from '../utils/index';
@@ -279,6 +280,7 @@ const Menu = ({ theme, toggleTheme }) => {
             <body className={menuOpen ? 'blur' : ''} />
           </Helmet>
     
+          <Router>
           <div ref={wrapperRef}>
             <StyledHamburgerButton onClick={toggleMenu} menuOpen={menuOpen} ref={buttonRef}>
               <div className="ham-box">
@@ -292,7 +294,7 @@ const Menu = ({ theme, toggleTheme }) => {
                   <ol>
                     {navLinks.map(({ url, name }, i) => (
                       <li key={i}>
-                        <Link to={url}>{name}</Link>
+                        <a href={url}>{name}</a>
                       </li>
                     ))}
                   </ol>
@@ -306,6 +308,7 @@ const Menu = ({ theme, toggleTheme }) => {
               </nav>
             </StyledSidebar>
           </div>
+          </Router>
         </StyledMenu>
       );
 };

@@ -90,7 +90,7 @@ const Footer = () => {
         <a href="https://github.com/bchiang7/v4">
           <div> Originally designed by Brittany Chiang</div>
         </a>
-        | 
+        🤝 
         <a href="https://github.com/einargudnig/homepage3.0">
           <div> Rebuilt by Einar Guðni Guðjónsson</div>
         </a>

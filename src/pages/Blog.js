@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { IconZap } from '../components/icons';
@@ -115,25 +115,25 @@ const StyledDate = styled.span`
   text-transform: uppercase;
 `;
 
-const StyledTags = styled.ul`
-  display: flex;
-  align-items: flex-end;
-  flex-wrap: wrap;
-  padding: 0;
-  margin: 0;
-  list-style: none;
+// const StyledTags = styled.ul`
+//   display: flex;
+//   align-items: flex-end;
+//   flex-wrap: wrap;
+//   padding: 0;
+//   margin: 0;
+//   list-style: none;
 
-  li {
-    color: ${({ theme }) => theme.accentColor};
-    font-family: var(--font-mono);
-    font-size: var(--fz-xxs);
-    line-height: 1.75;
+//   li {
+//     color: ${({ theme }) => theme.accentColor};
+//     font-family: var(--font-mono);
+//     font-size: var(--fz-xxs);
+//     line-height: 1.75;
 
-    &:not(:last-of-type) {
-      margin-right: 15px;
-    }
-  }
-`;
+//     &:not(:last-of-type) {
+//       margin-right: 15px;
+//     }
+//   }
+// `;
 
 const Blog = () => {
 

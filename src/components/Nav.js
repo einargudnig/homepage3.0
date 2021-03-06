@@ -10,8 +10,8 @@ import Menu from './Menu'
 
 import DarkToggle from './DarkToggle';
 
-import Scroll from 'react-scroll'
-const ScrollLink = Scroll.ScrollLink
+// import Scroll from 'react-scroll'
+// const ScrollLink = Scroll.ScrollLink
 
 const StyledHeader = styled.header`
 

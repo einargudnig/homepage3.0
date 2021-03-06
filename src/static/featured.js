@@ -1,6 +1,6 @@
 
-import course from './coursesFull.png'
-import reboot from './rebootFull.jpg'
+import course from './coursesResize.png'
+import reboot from './rebootResize.jpg'
 
 export const featured = [
 

@@ -5,8 +5,6 @@ import { srConfig } from '../../utils/config';
 import { Icon } from '../icons';
 import { featured } from '../../static/featured';
 
-// import course from '../../static/coursesFull.png'
-// import reboot from '../../static/rebootFull.jpg'
 
 
 const StyledProject = styled.div`
@@ -63,7 +61,7 @@ const StyledProject = styled.div`
       grid-column: 1 / 8;
 
       @media (max-width: 768px) {
-        grid-column: 1 / -1;
+        grid-column: 1 / 8;
       }
     }
   }
@@ -241,8 +239,11 @@ const StyledProject = styled.div`
     @media (max-width: 768px) {
       grid-column: 1 / -1;
       height: 100%;
+      max-width: 200px;
+      max-height: 100px;
       
     }
+
 
     a {
       width: 100%;
@@ -278,12 +279,16 @@ const StyledProject = styled.div`
     }
 
     .img {
+      position: relative;
       border-radius: var(--border-radius);
 
       @media (max-width: 768px) {
+        grid-column: 1 / -1;
         object-fit: cover;
-        width: auto;
         height: 100%;
+        max-width: 200px;
+        max-height: 100px;
+        
       }
     }
   }
@@ -348,6 +353,85 @@ const StyledProject = styled.div`
 
 `;
 
+const StyledPic = styled.div`
+  position: relative;
+  max-width: 300px;
+
+  @media (max-width: 768px) {
+    margin: 50px auto 0;
+    width: 70%;
+  }
+
+  .wrapper {
+    transition: var(--transition);
+
+    &:hover,
+    &:focus {
+    }
+
+    display: block;
+    position: relative;
+    width: 100%;
+    border-radius: var(--border-radius);
+    
+
+    &:hover,
+    &:focus {
+      background: transparent;
+      outline: 0;
+
+      &:after {
+        top: 15px;
+        left: 15px;
+      }
+
+      .img {
+        filter: none;
+        mix-blend-mode: normal;
+      }
+    }
+
+    .img {
+      position: relative;
+      border-radius: var(--border-radius);
+      
+      @media (max-width: 768px) {
+        grid-column: 1 / -1;
+        height: 100%;
+        max-width: 350px;
+        max-height: 250px;
+      }
+    }
+
+    &:before,
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 195%;
+      height: 100%;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+
+      @media (max-width: 768px) {
+        height: 100%;
+        width: 165%;
+      }
+    }
+
+    &:before {
+      top: 0;
+      left: 0;
+    }
+
+    &:after {
+      border: 2px solid ${({ theme }) => theme.accentColor};
+      top: 20px;
+      left: 20px;
+      z-index: -1;
+    }
+  }
+`;
 
 const Featured = () => {
 
@@ -396,15 +480,15 @@ const Featured = () => {
                                     </div>
                                 </div>
 
-                                <div className="project-image">
+                                <StyledPic>
                                     {cover && (
                                     <div className="wrapper">
                                       <a href={external ? external : github ? github : '#'}>
-                                        <img src={cover} alt={title} className="img" maxwidth="580" height="250" /> 
+                                        <img src={cover} alt={title} className="img" width="580" height="250" /> 
                                       </a>
                                     </div>
                                     )}
-                                </div>
+                                </StyledPic>
                             </StyledProject>
                         );
                     })}
