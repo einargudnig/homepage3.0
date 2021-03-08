@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { Link, Redirect } from 'react-router-dom'
 import Markdown from 'react-markdown/with-html'
 import gfm from 'remark-gfm'
+import images from 'remark-images'
 
 import postList from '../posts.json'
 
@@ -35,6 +36,7 @@ const StyledPostContent = styled.div`
   a {
     text-decoration: underline;
   }
+
 `;
 
 
@@ -79,7 +81,7 @@ const Post = (props) => {
             </StyledPostHeader>
             
             <StyledPostContent>
-              <Markdown plugins ={{gfm}} source={fetchedPost.content} escapeHtml={false}/>
+              <Markdown plugins ={{gfm, images}} source={fetchedPost.content} escapeHtml={false}/>
             </StyledPostContent>
 
         </StyledPostContainer>

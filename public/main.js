@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const { time } = require("console");
 
 // This file is the reason I can use simple markdown files as a blogposts.
 // This file needs to run every time I add/remove or update blog post.
@@ -60,6 +61,7 @@ const getPosts = () => {
                 const content = parseContent({lines, metadataIndices})
                 const date = new Date(metadata.date)
                 const timestamp = date.getTime() / 1000 // make a unix timestamp for the date given in the md file. Use that timestamp as an id for the post in the list
+                console.log(timestamp)
                 post = {
                     id : timestamp,
                     title: metadata.title ? metadata.title : "No title given",
